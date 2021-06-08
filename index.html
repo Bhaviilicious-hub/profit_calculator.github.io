@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ombika Seller Fees Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/png" href="./favicon.png" />
+  
+        <script type="text/javascript">
+         function calculate_fees(){
+          var cp= Number(document.getElementById("cp").value);
+          var sp= Number(document.getElementById("sp").value);
+          var profit = calculate_profit(sp,cp);
+           
+          document.getElementById('profit').value= profit;
+          }
+          
+          function calculate_profit(sp,cp){
+          var sp,cp;
+          var profit= sp-cp;
+          return profit; }
+        </script>
+    </head>
+    <body>
+        <div><h1>Ombika Seller Fees Calculator</h1>
+            <h2>Simplest way to calculate your profit</h2></div>
+        <form name="f">
+            <table>
+                <tr>
+                    Select Item Category 
+                <select type="search"> 
+                    <option value=""> </option>
+                    <option value=""> </option>
+                    <option value=""> </option>
+                </select>
+                </tr> 
+                <tr>
+                    <td>
+                        Selling Price &larr;
+                    </td>
+                    <td>
+                        ₹&ensp; <input class="text_box" type="text" id="sp" onblur="calculate_fees()">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Cost Price &larr;
+                    </td>
+                    <td>
+                        ₹ &ensp;<input class="text_box" type="text" id="cp" onblur="calculate_fees()">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Profit is
+                    </td>
+                    <td>
+                        ₹ &ensp;<input readonly="readonly"  type="text" id="profit" style="color:green">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
